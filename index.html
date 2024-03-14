@@ -8,18 +8,48 @@
         var words = text.split(" ").filter(function (item) {
           return item != "";
         });
-        var letters = text.replace(/\s/g, "");
+        var letters = text;
         document.getElementById("wordCount").innerText =
           "Word count: " + words.length;
         document.getElementById("letterCount").innerText =
           "Letter count: " + letters.length;
       }
     </script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      textarea {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 5px 0;
+      }
+    </style>
   </head>
   <body>
     <h1>Word and Letter Counter</h1>
-    <textarea id="text" onkeyup="countWordsAndLetters()"></textarea>
-    <p id="wordCount">Word count: 0</p>
-    <p id="letterCount">Letter count: 0</p>
+    <div class="container">
+      <textarea id="text" onkeyup="countWordsAndLetters()"></textarea>
+      <p id="wordCount">Word count: 0</p>
+      <p id="letterCount">Letter count: 0</p>
+    </div>
   </body>
 </html>
