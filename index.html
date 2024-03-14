@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Word and Letter Counter</title>
+    <script>
+      function countWordsAndLetters() {
+        var text = document.getElementById("text").value;
+        var words = text.split(" ").filter(function (item) {
+          return item != "";
+        });
+        var letters = text.replace(/\s/g, "");
+        document.getElementById("wordCount").innerText =
+          "Word count: " + words.length;
+        document.getElementById("letterCount").innerText =
+          "Letter count: " + letters.length;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Word and Letter Counter</h1>
+    <textarea id="text" onkeyup="countWordsAndLetters()"></textarea>
+    <p id="wordCount">Word count: 0</p>
+    <p id="letterCount">Letter count: 0</p>
+  </body>
+</html>
